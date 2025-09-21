@@ -99,12 +99,17 @@ export default function NewPromoPage() {
               <label htmlFor="store" className="block text-sm font-medium text-gray-700">
                 Store *
               </label>
-              <input
+              <select
                 {...register('store', { required: 'Store is required' })}
-                type="text"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                placeholder="Enter store name"
-              />
+              >
+                <option value="">Select a store</option>
+                <option value="Вайлдберриз">🛒 Вайлдберриз</option>
+                <option value="Озон">🛍️ Озон</option>
+                <option value="М.Видео">📱 М.Видео</option>
+                <option value="ДНС">💻 ДНС</option>
+                <option value="Пятёрочка">🛍️ Пятёрочка</option>
+              </select>
               {errors.store && (
                 <p className="mt-1 text-sm text-red-600">{errors.store.message}</p>
               )}
