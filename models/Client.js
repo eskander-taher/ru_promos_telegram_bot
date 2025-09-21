@@ -24,6 +24,10 @@ const clientSchema = new mongoose.Schema({
     default: 'en',
     trim: true
   },
+  languageSelected: {
+    type: Boolean,
+    default: false
+  },
   joinedAt: {
     type: Date,
     default: Date.now
