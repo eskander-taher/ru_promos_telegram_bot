@@ -178,6 +178,9 @@ export default function PromosPage() {
                           <Store className="flex-shrink-0 mr-1.5 h-4 w-4" />
                           <p className="truncate">{promo.store}</p>
                         </div>
+                        <div className="mt-1 text-sm text-gray-600">
+                          🎁 {promo.discount}
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">

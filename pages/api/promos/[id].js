@@ -28,10 +28,11 @@ async function handler(req, res) {
 
     case 'PUT':
       try {
-        const { code, minPrice, expiresAt, locations, store, isActive } = req.body;
+        const { code, discount, minPrice, expiresAt, locations, store, isActive } = req.body;
 
         const updateData = {};
         if (code) updateData.code = code.toUpperCase();
+        if (discount) updateData.discount = discount;
         if (minPrice !== undefined) updateData.minPrice = minPrice;
         if (expiresAt) updateData.expiresAt = new Date(expiresAt);
         if (locations) updateData.locations = Array.isArray(locations) ? locations : [locations];

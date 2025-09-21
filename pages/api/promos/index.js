@@ -45,14 +45,15 @@ async function handler(req, res) {
 
     case 'POST':
       try {
-        const { code, minPrice, expiresAt, locations, store } = req.body;
+        const { code, discount, minPrice, expiresAt, locations, store } = req.body;
 
-        if (!code || !minPrice || !expiresAt || !locations || !store) {
+        if (!code || !discount || !minPrice || !expiresAt || !locations || !store) {
           return res.status(400).json({ error: 'All fields are required' });
         }
 
         const promo = new Promo({
           code: code.toUpperCase(),
+          discount,
           minPrice,
           expiresAt: new Date(expiresAt),
           locations: Array.isArray(locations) ? locations : [locations],

@@ -115,6 +115,22 @@ export default function NewPromoPage() {
               )}
             </div>
 
+            {/* Discount */}
+            <div>
+              <label htmlFor="discount" className="block text-sm font-medium text-gray-700">
+                Discount/Benefit *
+              </label>
+              <input
+                {...register('discount', { required: 'Discount is required' })}
+                type="text"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                placeholder="e.g., 500₽ скидка, 15% скидка, Бесплатная доставка"
+              />
+              {errors.discount && (
+                <p className="mt-1 text-sm text-red-600">{errors.discount.message}</p>
+              )}
+            </div>
+
             {/* Min Price */}
             <div>
               <label htmlFor="minPrice" className="block text-sm font-medium text-gray-700">

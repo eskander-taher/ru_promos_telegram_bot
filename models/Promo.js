@@ -8,6 +8,11 @@ const promoSchema = new mongoose.Schema({
     trim: true,
     uppercase: true
   },
+  discount: {
+    type: String,
+    required: true,
+    trim: true
+  },
   minPrice: {
     type: Number,
     required: true,
